@@ -127,12 +127,12 @@ extension Bundle {
     static private func documentsDirectoryPath(directory: NSSearchPathDirectory) -> String {
         let URLs = NSFileManager.defaultManager().URLsForDirectory(directory, inDomains: .UserDomainMask)
         let URL = URLs[URLs.count - 1]
-        return URL.absoluteString
+        return URL.absoluteString!
     }
 
     static public func filePathInDocumentsDirectory(directory: NSSearchPathDirectory, toFile file: String) -> String {
         let URLs = NSFileManager.defaultManager().URLsForDirectory(directory, inDomains: .UserDomainMask)
         let URL = URLs[URLs.count - 1]
-        return (URL.absoluteString as NSString).stringByAppendingPathComponent(file)
+        return (URL.absoluteString! as NSString).stringByAppendingPathComponent(file)
     }
 }
